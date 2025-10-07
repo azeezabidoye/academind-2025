@@ -1,10 +1,9 @@
-import Post from "./components/Post";
+import PostsList from "./components/PostsList";
 
-function App(props) {
+function App() {
   return (
     <div>
-      <Post author="Currency" body="Werey la fi n wo werey" />
-      <Post author="Wizkid" body="Ojuelegba...them know my story" />
+      <PostsList />
     </div>
   );
 }
