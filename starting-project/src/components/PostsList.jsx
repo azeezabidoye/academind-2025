@@ -9,6 +9,10 @@ function PostsList() {
   const [enteredBody, setEnteredBody] = useState("");
   const [enteredAuthor, setEnteredAuthor] = useState("");
 
+  function hideModalVisibility() {
+    setModalIsVisible(false);
+  }
+
   function changeBodyHandler(e) {
     setEnteredBody(e.target.value);
   }
@@ -18,12 +22,15 @@ function PostsList() {
 
   return (
     <>
-      <Modal>
-        <NewPost
-          onBodyChange={changeBodyHandler}
-          onAuthorChange={changeAuthorHandler}
-        />
-      </Modal>
+      {modalIsVisible && (
+        <Modal onClose={hideModalVisibility}>
+          <NewPost
+            onBodyChange={changeBodyHandler}
+            onAuthorChange={changeAuthorHandler}
+          />
+        </Modal>
+      )}
+
       <ul className={classes.posts}>
         <Post author={enteredAuthor} body={enteredBody} />
         {/* <Post author="Wizkid" body="Ojuelegba...them know my story" />  */}
