@@ -5,6 +5,7 @@ import Modal from "./Modal";
 import classes from "./PostsList.module.css";
 
 function PostsList() {
+  const [modalIsVisible, setModalIsVisible] = useState(true);
   const [enteredBody, setEnteredBody] = useState("");
   const [enteredAuthor, setEnteredAuthor] = useState("");
 
