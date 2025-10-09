@@ -11,8 +11,17 @@ function NewPost(props) {
   function changeAuthorHandler(e) {
     setEnteredAuthor(e.target.value);
   }
+  function submitHandler(e) {
+    e.preventDefault();
+    const postData = {
+      body: enteredBody,
+      author: enteredAuthor,
+    };
+    console.log(postData);
+    props.onCancel();
+  }
   return (
-    <form className={classes.form}>
+    <form className={classes.form} onSubmit={submitHandler}>
       <p>
         <label htmlFor="body">Text</label>
         <textarea id="body" required rows={3} onChange={changeBodyHandler} />
