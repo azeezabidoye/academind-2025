@@ -14,7 +14,7 @@ function PostsList({ isPosting, onStopPosting }) {
     <>
       {isPosting && (
         <Modal onClose={onStopPosting}>
-          <NewPost onCancel={onStopPosting} />
+          <NewPost onCancel={onStopPosting} onAddPost={addPostHandler} />
         </Modal>
       )}
 
