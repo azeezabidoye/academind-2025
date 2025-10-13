@@ -2,8 +2,14 @@ import Post from "./Post";
 import Modal from "./Modal";
 import NewPost from "./NewPost";
 import classes from "./PostsList.module.css";
+import { useState } from "react";
 
 function PostsList({ isPosting, onStopPosting }) {
+  const [posts, setPosts] = useState([]);
+
+  function addPostHandler(postData) {
+    setPosts([postData, ...posts]);
+  }
   return (
     <>
       {isPosting && (
