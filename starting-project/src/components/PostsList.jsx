@@ -27,6 +27,7 @@ function PostsList({ isPosting, onStopPosting }) {
       {posts.length === 0 && (
         <div style={{ textAlign: "center", color: "white" }}>
           <h2>There are no posts yet!</h2>
+          <p>Click New Post to add posts.</p>
         </div>
       )}
     </>
