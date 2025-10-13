@@ -19,7 +19,9 @@ function PostsList({ isPosting, onStopPosting }) {
       )}
 
       <ul className={classes.posts}>
-        <Post author="Wizkid" body="Ojuelegba...them know my story" />
+        {posts.map((post) => (
+          <Post author={post.author} body={post.body} />
+        ))}
       </ul>
     </>
   );
